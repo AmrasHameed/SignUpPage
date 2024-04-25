@@ -3,6 +3,7 @@ const userrouter = express.Router();
 const bcrypt = require('bcrypt');
 const collection = require('../mongodb');
 const session = require('express-session');
+const flash=require('express-flash')
 
 userrouter.get("/", (req, res) => {
     if (req.session.isAuth) {

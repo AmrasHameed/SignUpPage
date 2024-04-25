@@ -7,12 +7,13 @@ const flash = require('express-flash');
 const userRouter = require('./route/userRouter')
 const adminRouter= require('./route/adminRouter')
 const collection = require('./mongodb');
+const morgan = require('morgan')
 
 const app = express();
 app.use(nocache())
+app.use(morgan('tiny'));
 
-
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 
 app.use('/static', express.static(path.join(__dirname, 'views','static')))
 app.use(express.json())
